@@ -9,8 +9,14 @@
             </h2>
             <%= image_tag topic.image.url %>
             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
-            <p class="topic-text>
+            <p class="topic-text">
               <%= topic.description %>
+            <h4 class="comment">コメント</h4>
+            <% topic.comments.each do |comment| %>
+            <p class="topic-text">
+              <%= comment.body %>
+            </p>
+            <% end %>
             </p>
           </div>
         </div>
