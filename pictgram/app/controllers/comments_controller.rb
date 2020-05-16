@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.topic_id = params[:topic_id]
     
-    if @comment.save
+    if @comment.save!
       redirect_to topics_path, success: 'コメントに成功しました'
     else
       flash.now[:danger] = "コメントに失敗しました"
